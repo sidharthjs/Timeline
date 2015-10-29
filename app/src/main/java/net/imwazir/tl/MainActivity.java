@@ -3,6 +3,7 @@ package net.imwazir.tl;
 import android.app.Activity;
 import android.app.Dialog;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.Menu;
@@ -79,7 +80,6 @@ public class MainActivity extends Activity {
                         itr=contentReader.readLine();
                         if(itr==null)
                             break;
-                        text +="\n";
                         text +=itr;
                     }
                     return text;
@@ -95,7 +95,18 @@ public class MainActivity extends Activity {
             protected void onPostExecute(String result) {
 
                 loadingDialog.dismiss();
-                tv_result.setText(result);
+                if(result=="10")
+                    tv_result.setText("Password doesn't match..");
+                else if(result=="11")
+                    tv_result.setText("Username doesn't exist..");
+                else if(result=="")
+                    tv_result.setText("Something went wrong. Try again..");
+                else {
+                    Intent intent = new Intent(MainActivity.this, newsfeed.class);
+                    intent.putExtra("sid", result);
+                    startActivity(intent);
+                }
+
             }
         }
 
