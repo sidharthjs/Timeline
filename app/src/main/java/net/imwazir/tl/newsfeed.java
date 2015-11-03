@@ -6,6 +6,9 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -34,6 +37,14 @@ public class newsfeed extends Activity {
 
         Intent intent = getIntent();
         sid = intent.getStringExtra("sid");
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_newsfeed, menu);
+        return super.onCreateOptionsMenu(menu);
     }
 
     public void post(View view) {
@@ -81,29 +92,22 @@ public class newsfeed extends Activity {
                         contentWriter.close();
 
                         BufferedReader contentReader = new BufferedReader(new InputStreamReader(con.getInputStream()));
-                        String text = "";
-                        String itr = "";
-                        while (true) {
-                            itr = contentReader.readLine();
-                            if (itr == null)
-                                break;
-                            text += itr;
-                        }
-                        return text;
+                        String itr = contentReader.readLine();
+                        return itr;
                     }
 
                     catch (IOException e) {
-                        return new String("Operation Failed:\n" + e);
+                        return new String("");
                     }
                 }
 
                 @Override
                 protected void onPostExecute(String result) {
 
-                    if(result=="1") {
+                    if(result.equals("1")) {
                         Toast.makeText(getApplicationContext(), "Success!", Toast.LENGTH_SHORT).show();
                     }
-                    else if(result=="") {
+                    else if(result.equals("")) {
                         Toast.makeText(getApplicationContext(), "Something went wrong. Try again", Toast.LENGTH_SHORT).show();
                     }
                     else {
@@ -112,6 +116,24 @@ public class newsfeed extends Activity {
                 }
             }
             new PostAsync().execute(sid, post_data);
+        }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_profile:
+
+                Intent intent = new Intent(newsfeed.this, profile.class);
+                intent.putExtra("sid", sid);
+                startActivity(intent);
+
+                return true;
+
+            default:
+
+                return super.onOptionsItemSelected(item);
+
         }
     }
 }

@@ -74,19 +74,12 @@ public class MainActivity extends Activity {
                     contentWriter.close();
 
                     BufferedReader contentReader = new BufferedReader(new InputStreamReader(con.getInputStream()));
-                    String text = "";
-                    String itr = "";
-                    while(true) {
-                        itr=contentReader.readLine();
-                        if(itr==null)
-                            break;
-                        text +=itr;
-                    }
-                    return text;
+                    String itr=contentReader.readLine();
+                    return itr;
                 }
 
                 catch(IOException e) {
-                    return new String("Operation Failed:\n"+e);
+                    return new String("");
                 }
 
             }
@@ -95,12 +88,13 @@ public class MainActivity extends Activity {
             protected void onPostExecute(String result) {
 
                 loadingDialog.dismiss();
-                if(result=="10")
+                if(result.equals("10"))
                     tv_result.setText("Password doesn't match..");
-                else if(result=="11")
+                else if(result.equals("11"))
                     tv_result.setText("Username doesn't exist..");
-                else if(result=="")
+                else if(result.equals(""))
                     tv_result.setText("Something went wrong. Try again..");
+
                 else {
                     Intent intent = new Intent(MainActivity.this, newsfeed.class);
                     intent.putExtra("sid", result);

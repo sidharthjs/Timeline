@@ -15,10 +15,11 @@
         android:inputType="textMultiLine"
         android:ems="10"
         android:id="@+id/et_post"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:hint="Do you wanna tell something..?"
-        android:height="32dp" />
+        android:hint="Say something to the world..?"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="35dp" />
 
     <Button
         android:layout_width="wrap_content"

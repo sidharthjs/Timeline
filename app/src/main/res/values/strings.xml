@@ -1,7 +1,11 @@
 <resources>
     <string name="app_name">Tl</string>
 
-    <string name="hello_world">Hello world!</string>
+    <string name="action_profile">Profile</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_newsfeed">Newsfeed</string>
+    <string name="title_activity_profile">Profile</string>
+    <string name="action_profile_edit">Edit</string>
+    <string name="title_activity_profile_edit">Edit : Profile</string>
+    <string name="action_profile_save">Save</string>
 </resources>
