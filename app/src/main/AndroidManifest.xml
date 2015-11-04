@@ -26,7 +26,13 @@
             android:label="@string/title_activity_profile" />
         <activity
             android:name=".profile_edit"
-            android:label="@string/title_activity_profile_edit"></activity>
+            android:label="@string/title_activity_profile_edit" />
+        <activity
+            android:name=".signup"
+            android:label="@string/title_activity_signup" />
+        <activity
+            android:name=".profile_setup"
+            android:label="@string/title_activity_profile_setup"></activity>
     </application>
 
 </manifest>

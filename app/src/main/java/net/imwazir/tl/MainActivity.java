@@ -125,7 +125,9 @@ public class MainActivity extends Activity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_signup) {
+            Intent intent = new Intent(MainActivity.this, signup.class);
+            startActivity(intent);
             return true;
         }
 

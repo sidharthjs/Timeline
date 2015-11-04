@@ -8,4 +8,7 @@
     <string name="action_profile_edit">Edit</string>
     <string name="title_activity_profile_edit">Edit : Profile</string>
     <string name="action_profile_save">Save</string>
+    <string name="title_activity_signup">Create your account</string>
+    <string name="action_signup">Sign up</string>
+    <string name="title_activity_profile_setup">Enter your profile details</string>
 </resources>
