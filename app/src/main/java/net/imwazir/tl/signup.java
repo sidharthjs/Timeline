@@ -7,6 +7,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,6 +28,7 @@ public class signup extends Activity {
     private EditText et_signup_email, et_signup_usr, et_signup_pass;
 
     public TextView tv_signup_error;
+    public Button bt_signup_next;
     public String signup_usr, signup_pass, signup_email;
 
     @Override
@@ -39,6 +41,15 @@ public class signup extends Activity {
         et_signup_pass = (EditText) findViewById(R.id.et_signup_pass);
 
         tv_signup_error = (TextView) findViewById(R.id.tv_signup_error);
+
+        bt_signup_next = (Button) findViewById(R.id.bt_signup_next);
+        bt_signup_next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                signup_next();
+            }
+        });
+
 
     }
 

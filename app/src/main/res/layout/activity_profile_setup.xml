@@ -60,7 +60,6 @@
         android:layout_below="@+id/cb_signup_terms"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="10dp"
-        android:onClick="signup_create()" />
+        android:layout_marginTop="10dp" />
 
 </RelativeLayout>

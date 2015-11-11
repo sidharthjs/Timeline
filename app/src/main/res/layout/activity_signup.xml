@@ -48,8 +48,7 @@
         android:layout_below="@+id/et_signup_pass"
         android:layout_alignRight="@+id/et_signup_pass"
         android:layout_alignEnd="@+id/et_signup_pass"
-        android:layout_marginTop="10dp"
-        android:onClick="signup_next()" />
+        android:layout_marginTop="10dp" />
 
     <TextView
         android:layout_width="fill_parent"

@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -24,6 +26,8 @@ public class profile_setup extends Activity {
 
     private EditText et_signup_name, et_signup_url, et_signup_sdescrpt;
 
+    public Button bt_signup_create;
+
     String signup_email,signup_usr,signup_pass,signup_name,signup_url,signup_sdescrpt;
 
     @Override
@@ -40,6 +44,13 @@ public class profile_setup extends Activity {
         et_signup_url = (EditText) findViewById(R.id.et_signup_url);
         et_signup_sdescrpt = (EditText) findViewById(R.id.et_signup_sdescrpt);
 
+        bt_signup_create = (Button) findViewById(R.id.bt_signup_create);
+        bt_signup_create.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                signup_create();
+            }
+        });
 
     }
 
