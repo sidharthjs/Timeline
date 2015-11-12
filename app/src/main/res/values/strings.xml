@@ -11,4 +11,7 @@
     <string name="title_activity_signup">Create your account</string>
     <string name="action_signup">Sign up</string>
     <string name="title_activity_profile_setup">Enter your profile details</string>
+    <string name="title_activity_subscriber">Subscribers List</string>
+    <string name="action_subscribe">Subscribers</string>
+    <string name="action_logout">Logout</string>
 </resources>

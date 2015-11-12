@@ -130,6 +130,15 @@ public class newsfeed extends Activity {
 
                 return true;
 
+            case R.id.action_subscribe:
+
+                Intent intent2 = new Intent(newsfeed.this, subscriber.class);
+                intent2.putExtra("sid", sid);
+                startActivity(intent2);
+
+                return true;
+
+
             default:
 
                 return super.onOptionsItemSelected(item);
